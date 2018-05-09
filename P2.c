@@ -4,7 +4,7 @@
 
 int main()
 {
-	int valor, tipo, dec = 0, num, d = 1, q[80],r[80], i=0;
+	int valor, tipo, dec = 0, num, d = 1, q[80],r[80], i=0, n;
 	char numEmHexa[256];
 	char charHexa[16] = {'0', '1', '2', '3', '4', '5', '6', '7', 
 			     '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -71,18 +71,19 @@ int main()
 	{
 	printf("Numero a ser convertido:");
     scanf("%d", &dec);
-    while (dec != 1){     
-    q[i]= dec / 2;  
-    r[i] = dec % 2; 
-    dec=q[i];       
-    i++;
-    }
-
-     while (i>=0){  
-     if (q[i] == 1) printf("1%d",r[i]);
-          else printf("%d",r[i]);  
-     i--;
-     }
+   for(i = 31; i >= 0; i--)
+	{
+		n = dec >> i;
+		
+		if(n & 1)
+		{
+			printf("1");
+		}
+	    else
+	    {
+	    	printf("0");
+		}
+	}
 	}
 	
 	
@@ -124,11 +125,11 @@ int main()
 }
 
 
-//1. Binário para Decimal
-//2. Binário para Hexadecimal
+//1. BinÃ¡rio para Decimal
+//2. BinÃ¡rio para Hexadecimal
 //3. Hexadecimal para Decimal
-//4. Hexadecimal para Binário
-//5. Decimal para Binário
+//4. Hexadecimal para BinÃ¡rio
+//5. Decimal para BinÃ¡rio
 //6. Decimal para Hexadecimal
 //7. Octal para Decimal
 //8. Decimal para Octal
