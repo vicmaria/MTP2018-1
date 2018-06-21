@@ -5,7 +5,7 @@
 int main()
 {
 	int estado = 0, i = 0;
-	char bits[256];
+	scanf("%[^\n]",bits); 
 	
 	printf("Digite um numero binario: ");
 	scanf("%s", &bits);
