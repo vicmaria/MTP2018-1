@@ -5,10 +5,10 @@
 int main()
 {
 	int estado = 0, i = 0;
-	scanf("%[^\n]",bits); 
+	char bits[256]; 
 	
 	printf("Digite um numero binario: ");
-	scanf("%s", &bits);
+	scanf("%[^\n]",bits); 
 	
 	while(bits[i] != '\0')
 	{
