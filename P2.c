@@ -2,6 +2,62 @@
 
 #include <stdio.h>
 
+void ImprimeBin(int numEmBin[10])
+{
+	int i;
+	for(i = 0; i < 4; i++)
+	{
+		if(numEmBin[i] == '0')
+		  printf("0000");
+		 
+		if(numEmBin[i] == '1')
+		  printf("0001");
+		 
+		if(numEmBin[i] == '2')
+		  printf("0010");
+		 
+		if(numEmBin[i] == '3')
+		  printf("0011");
+		 
+		if(numEmBin[i] == '4')
+		  printf("0100");
+		 
+		if(numEmBin[i] == '5')
+     	          printf("0101");
+		 
+		if(numEmBin[i] == '6')
+		  printf("0110");
+		 
+		 if(numEmBin[i] == '7')
+		   printf("0111");
+		 
+		 if(numEmBin[i] == '8')
+		   printf("1000");
+		 
+		 if(numEmBin[i] == '9')
+		   printf("1001");
+		   
+		 if(numEmBin[i] == 'A')
+		   printf("1010");
+		 
+		 if(numEmBin[i] == 'B')
+		   printf("1011");
+		 
+		 if(numEmBin[i] == 'C')
+		   printf("1100");
+		 
+		 if(numEmBin[i] == 'D')
+		   printf("1101");
+		 
+		 if(numEmBin[i] == 'E')
+		   printf("1110");
+		 
+		 if(numEmBin[i] == 'F')
+		   printf("1111");
+		 
+	}
+}
+
 int main()
 {
 	int valor, tipo, dec = 0, num, d = 1, q[80],r[80], i=0, n;
@@ -9,8 +65,8 @@ int main()
 	char charHexa[16] = {'0', '1', '2', '3', '4', '5', '6', '7', 
 			     '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 	int numEmBin[10];
-	int intBin[16] = {'0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', 
-			     '1000', '1001', '1010', '1011', '1100', '1101', '1110', '1111'};
+	//int intBin[16] = {'0', '1', '2', '3', '4', '5', '6', '7', 
+			    // '8', '9', 'A', '11', '12', '13', '14', '15'};
 	
 	
     printf("Tipo de conversao: ");
@@ -57,21 +113,22 @@ int main()
 	printf("Numero a ser convertido: ");
 	scanf("%X", &num);
 	
-	numEmBin[0] = intBin[ ((num & 0xF000) >> 12) ];
-	numEmBin[1] = intBin[ ((num & 0x0F00) >> 8) ];
-	numEmBin[2] = intBin[ ((num & 0x00F0) >> 4) ];
-	numEmBin[3] = intBin[ (num & 0x000F) ];
+	numEmBin[0] = charHexa[ ((num & 0xF000) >> 12) ];
+	numEmBin[1] = charHexa[ ((num & 0x0F00) >> 8) ];
+	numEmBin[2] = charHexa[ ((num & 0x00F0) >> 4) ];
+	numEmBin[3] = charHexa[ (num & 0x000F) ];
 	numEmBin[4] = '\0';
 	
-	printf("%s", numEmBin);
+	ImprimeBin(numEmBin);
    
 	}
 	
 	if(tipo == 5)
 	{
 	printf("Numero a ser convertido:");
-    scanf("%d", &dec);
-   for(i = 31; i >= 0; i--)
+   scanf("%d", &dec);
+	
+	for(i = 31; i >= 0; i--)
 	{
 		n = dec >> i;
 		
