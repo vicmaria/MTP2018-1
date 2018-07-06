@@ -1,13 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct Dimensoes
+{
+	float largura;
+  	float altura;
+  	float profundidade;
+
+} Dimensoes;
+
 typedef struct Produto
 {
 	char nome[64];
 	float preco;
-	float largura;
-  	float altura;
-  	float profundidade;
+	Dimensoes dim;
 
 } Produto;
 
@@ -20,11 +26,11 @@ void inserirDados(Produto *temp)
 	printf("Preco: ");
 	scanf("%f", &temp->preco);
 	printf("Largura: ");
-	scanf("%f", &temp->largura);
+	scanf("%f", &temp->dim.largura);
 	printf("Profundidade: ");
-	scanf("%f", &temp->profundidade);
+	scanf("%f", &temp->dim.profundidade);
 	printf("Altura: ");
-	scanf("%f", &temp->altura);
+	scanf("%f", &temp->dim.altura);
 
 
 	}
@@ -39,7 +45,7 @@ void Consultar(Produto *P, int n)
 				for(i=(x - 1); i < n; i++)
 				{
 				    printf("\nPRODUTO %d:\n---------------------------\n", i + 1);
-					printf("Nome: %s, R$%0.2f  L: %0.2fm  P: %0.2fm  A: %.2fm\n", P[i].nome, P[i].preco, P[i].largura, P[i].profundidade, P[i].altura);
+					printf("Nome: %s, R$%0.2f  L: %0.2fm  P: %0.2fm  A: %.2fm\n", P[i].nome, P[i].preco, P[i].dim.largura, P[i].dim.profundidade, P[i].dim.altura);
 					if(i == x - 1)
                         i = n;
 				}
