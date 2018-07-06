@@ -39,7 +39,7 @@ void Consultar(Produto *P, int n)
 				for(i=(x - 1); i < n; i++)
 				{
 				    printf("\nPRODUTO %d:\n---------------------------\n", i + 1);
-					printf("Nome: %s  Preco: R$%0.2f  Largura: %0.2f  Profundidade: %0.2f  Altura: %.2f\n", P[i].nome, P[i].preco, P[i].largura, P[i].profundidade, P[i].altura);
+					printf("Nome: %s, R$%0.2f  L: %0.2fm  P: %0.2fm  A: %.2fm\n", P[i].nome, P[i].preco, P[i].largura, P[i].profundidade, P[i].altura);
 					if(i == x - 1)
                         i = n;
 				}
@@ -84,4 +84,3 @@ int main()
 
 	return 0;
 }
-
