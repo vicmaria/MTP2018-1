@@ -43,6 +43,7 @@ void Consultar(Produto *P, int n)
 					if(i == x - 1)
                         i = n;
 				}
+				getchar();
 
 }
 
@@ -55,7 +56,7 @@ int main()
 
 	do
 	{
-		system("cls");
+		system("clear");
 		printf("[1] - Cadastrar\n");
 		printf("[2] - Consultar\n");
 		printf("[3] - Sair do programa\n");
@@ -74,7 +75,7 @@ int main()
 
 			case '2':
 				Consultar(P, n);
-				system("pause");
+				getchar();
 				break;
 		}
 
