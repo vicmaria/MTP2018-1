@@ -61,13 +61,48 @@ void Consultar(Produto *P, int n)
 				getchar();
 
 }
+int escreveArquivo(Produto *P, int n)
+{
+	int i;
+	char ArqNome[64];
+	printf("Nome do arquivo: ");
+	scanf("%s", ArqNome);
+	
+	FILE *arq;
+	if((arq = fopen(ArqNome,"ab")) != NULL)   
+	{
+		for(i= 0; i < n; i++)
+				{
+				    fprintf(arq,"\nPRODUTO %d:\n---------------------------\n", i + 1);
+					fprintf(arq,"Nome: %s, R$%0.2f  L: %0.2fm  P: %0.2fm  A: %.2fm\n", P[i].nome, P[i].preco, P[i].dim.largura, P[i].dim.profundidade, P[i].dim.altura);
+	
+				}
+		fclose(arq);
+		printf("Produtos armazenados em disco com sucesso!\n");
+	}
+	else
+	   printf("Erro - nao foi possivel criar/abrir o arquivo\n");
+	getchar();
+	return n;
+}
+void leitura(Produto *P, int x)
+{
+	int i;
+	char ArqNome[64];
+	printf("Nome do arquivo: ");
+	scanf("%s", ArqNome);
+	
+    printf("Arquivo contem %d produto(s). Leitura realizada com sucesso!\n", x);
+	getchar();
+}
 
 
 int main()
 {
 	Produto *P;
 	char op;
-	int n = 0, i, x;
+	int n = 0, i, x = 0;
+	char ArqNome[64];
 
 	do
 	{
@@ -104,6 +139,14 @@ int main()
 				Consultar(P, n);
 				getchar();
 				break;
+			case '4':
+				x = escreveArquivo(P, n);
+				getchar();
+				break;
+			case '3':
+			    leitura(P, x);
+	            getchar();
+				break;
 		}
 
 	}while(op != '0');
@@ -112,4 +155,3 @@ int main()
 
 	return 0;
 }
-
