@@ -71,7 +71,7 @@ int main()
 
 	do
 	{
-		system("cls");
+		system("clear");
 		printf("Produtos em memoria: %d\n", n);
 		printf("[1] - Consultar\n");
 		printf("[2] - Cadastrar novo\n");
@@ -97,7 +97,7 @@ int main()
 				    getchar();
 				}
 				else
-				printf("Não foi possível alocar memoria");
+				printf("NÃ£o foi possÃ­vel alocar memoria");
 				break;
 
 			case '1':
