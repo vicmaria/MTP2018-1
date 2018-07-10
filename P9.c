@@ -70,7 +70,7 @@ int main()
 		printf("[2] - Consultar\n");
 		printf("[3] - Sair do programa\n");
 		printf("--------------------------------------------\nOpcao: ");
-		fflush(stdin);
+		__fpurge(stdin);
 		op = getchar();
 
 		switch(op)
