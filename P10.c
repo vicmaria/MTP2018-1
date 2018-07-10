@@ -114,7 +114,7 @@ int main()
 		printf("[4] - Salvar memoria em arquivo (sobrescreve arquivo) \n");
 		printf("[0] - Encerra\n");
 		printf("--------------------------------------------\nOpcao: ");
-		fflush(stdin);
+		__fpurge(stdin);
 		op = getchar();
 
 		switch(op)
