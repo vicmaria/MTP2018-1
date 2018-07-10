@@ -25,7 +25,7 @@ void inserirDados(Produto *temp)
 
 	printf("Nome: ");
 	fflush(stdin);
-	scanf("%[^\n]", &temp->nome);
+	scanf("%s", temp->nome);
 	printf("Preco: ");
 	scanf("%f", &temp->preco);
 	printf("Largura: ");
@@ -70,7 +70,6 @@ int main()
 		printf("[2] - Consultar\n");
 		printf("[3] - Sair do programa\n");
 		printf("--------------------------------------------\nOpcao: ");
-		__fpurge(stdin);
 		op = getchar();
 
 		switch(op)
